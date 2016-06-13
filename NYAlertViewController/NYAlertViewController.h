@@ -201,4 +201,6 @@ typedef NS_ENUM(NSInteger, NYAlertViewControllerTransitionStyle) {
  */
 - (void)addTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler;
 
+- (void)setVerticalCenterAlignment:(float)constant;
+
 @end
