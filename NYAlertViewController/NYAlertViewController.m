@@ -606,7 +606,7 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
 
 - (void)setVerticalCenterAlignment:(CGFloat)constant
 {
-	self.verticalCenterAlignment = constant;
+	_verticalCenterAlignment = constant;
 	self.view.backgroundViewVerticalCenteringConstraint.constant = constant;
 	[self.view layoutIfNeeded];
 }
