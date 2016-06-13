@@ -310,6 +310,7 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
 @implementation NYAlertViewController
 
 @dynamic view;
+@synthesize verticalCenterAlignment;
 
 + (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message {
 	NYAlertViewController *alertController = [[NYAlertViewController alloc] initWithNibName:nil bundle:nil];
@@ -604,9 +605,15 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
 	self.view.titleLabel.textColor = titleColor;
 }
 
+
+- (CGFloat)getVerticalCenterAlignment
+{
+	return self.view.backgroundViewVerticalCenteringConstraint.constant;
+}
+
+
 - (void)setVerticalCenterAlignment:(CGFloat)constant
 {
-	_verticalCenterAlignment = constant;
 	self.view.backgroundViewVerticalCenteringConstraint.constant = constant;
 	[self.view layoutIfNeeded];
 }
