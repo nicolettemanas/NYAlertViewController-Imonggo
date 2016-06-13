@@ -604,8 +604,9 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
 	self.view.titleLabel.textColor = titleColor;
 }
 
-- (void)setVerticalCenterAlignment:(float)constant
+- (void)setVerticalCenterAlignment:(CGFloat)constant
 {
+	self.verticalCenterAlignment = constant;
 	self.view.backgroundViewVerticalCenteringConstraint.constant = constant;
 	[self.view layoutIfNeeded];
 }

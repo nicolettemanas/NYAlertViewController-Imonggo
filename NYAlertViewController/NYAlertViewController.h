@@ -181,6 +181,11 @@ typedef NS_ENUM(NSInteger, NYAlertViewControllerTransitionStyle) {
 @property (nonatomic, readonly) NSArray *actions;
 
 /**
+ change this vertical center alignment to move up or down
+*/
+@property (nonatomic) CGFloat verticalCenterAlignment;
+
+/**
  An array of UITextField objects displayed by the alert view
  
  @see addTextFieldWithConfigurationHandler:
@@ -200,7 +205,5 @@ typedef NS_ENUM(NSInteger, NYAlertViewControllerTransitionStyle) {
  @param configurationHandler A block used to configure the text field. The block takes the text field object as a parameter, and can modify the properties of the text field prior to being displayed.
  */
 - (void)addTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler;
-
-- (void)setVerticalCenterAlignment:(float)constant;
 
 @end
