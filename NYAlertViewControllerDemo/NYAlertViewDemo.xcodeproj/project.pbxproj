@@ -16,6 +16,7 @@
 		0EF9AD811B5B15C7000C7F1D /* NYAlertViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9AD801B5B15C7000C7F1D /* NYAlertViewDemoTests.m */; };
 		0EF9AD9C1B5B1785000C7F1D /* NYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9AD8E1B5B1785000C7F1D /* NYAlertView.m */; };
 		0EF9AD9D1B5B1785000C7F1D /* NYAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9AD901B5B1785000C7F1D /* NYAlertViewController.m */; };
+		639A63E91D2CA396001C4AF3 /* NYAlertViewController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 639A63E81D2CA396001C4AF3 /* NYAlertViewController.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0EF9AD8E1B5B1785000C7F1D /* NYAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYAlertView.m; sourceTree = "<group>"; };
 		0EF9AD8F1B5B1785000C7F1D /* NYAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYAlertViewController.h; sourceTree = "<group>"; };
 		0EF9AD901B5B1785000C7F1D /* NYAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYAlertViewController.m; sourceTree = "<group>"; };
+		639A63E81D2CA396001C4AF3 /* NYAlertViewController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = NYAlertViewController.podspec; path = ../../NYAlertViewController.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		0EF9AD631B5B15C7000C7F1D /* NYAlertViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				639A63E81D2CA396001C4AF3 /* NYAlertViewController.podspec */,
 				0EF9AD681B5B15C7000C7F1D /* AppDelegate.h */,
 				0EF9AD691B5B15C7000C7F1D /* AppDelegate.m */,
 				0EF9AD6B1B5B15C7000C7F1D /* DemoViewController.h */,
@@ -224,6 +227,7 @@
 				0EF9AD701B5B15C7000C7F1D /* Main.storyboard in Resources */,
 				0EF9AD751B5B15C7000C7F1D /* LaunchScreen.xib in Resources */,
 				0EF9AD721B5B15C7000C7F1D /* Images.xcassets in Resources */,
+				639A63E91D2CA396001C4AF3 /* NYAlertViewController.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
