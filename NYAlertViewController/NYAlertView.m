@@ -280,6 +280,7 @@
 		[self.actionButtonContainerView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
 		[self.alertBackgroundView addSubview:self.actionButtonContainerView];
 		
+		self.alertBackgroundView.backgroundColor = [UIColor whiteColor];
 		self.actionButtonContainerView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
 		
 		[self addConstraint:[NSLayoutConstraint constraintWithItem:self.alertBackgroundView
@@ -522,12 +523,12 @@
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(firstButton, lastButton)]];
 		
-		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[firstButton(32)]-0-|"
+		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[firstButton(40)]-0-|"
 																															options:0
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(_contentViewContainerView, firstButton)]];
 		
-		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[lastButton(32)]"
+		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[lastButton(40)]"
 																															options:0
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(lastButton)]];
@@ -542,7 +543,7 @@
 																																metrics:nil
 																																  views:NSDictionaryOfVariableBindings(actionButton)]];
 			
-			[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[actionButton(32)]"
+			[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[actionButton(40)]"
 																																options:0
 																																metrics:nil
 																																  views:NSDictionaryOfVariableBindings(actionButton)]];

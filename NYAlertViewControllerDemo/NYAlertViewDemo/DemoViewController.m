@@ -76,8 +76,13 @@ static NSString * const kTableViewCellReuseIdentifier = @"kTableViewCellReuseIde
     alertViewController.messageFont = [UIFont fontWithName:@"AvenirNext-Regular" size:alertViewController.messageFont.pointSize];
     alertViewController.buttonTitleFont = [UIFont fontWithName:@"AvenirNext-Regular" size:alertViewController.buttonTitleFont.pointSize];
     alertViewController.cancelButtonTitleFont = [UIFont fontWithName:@"AvenirNext-Medium" size:alertViewController.cancelButtonTitleFont.pointSize];
-    
-    for (int i = 0; i < actionCount; i++) {
+	
+	alertViewController.buttonColor = [UIColor whiteColor];
+	alertViewController.cancelButtonColor = [UIColor whiteColor];
+	alertViewController.buttonTitleColor = [UIColor greenColor];
+	alertViewController.cancelButtonTitleColor = [UIColor greenColor];
+	
+	 for (int i = 0; i < actionCount; i++) {
         NSString *actionTitle = [NSString stringWithFormat:NSLocalizedString(@"Action %d", nil), i + 1];
         UIAlertActionStyle actionStyle = UIAlertActionStyleDefault;
         
@@ -91,6 +96,9 @@ static NSString * const kTableViewCellReuseIdentifier = @"kTableViewCellReuseIde
             [self dismissViewControllerAnimated:YES completion:nil];
         }]];
     }
+	
+	 alertViewController.buttonTitleColor = [UIColor greenColor];
+	 alertViewController.cancelButtonTitleColor = [UIColor greenColor];
     
     [self presentViewController:alertViewController animated:YES completion:nil];
 }
