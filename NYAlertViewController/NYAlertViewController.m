@@ -700,6 +700,16 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
 	}];
 }
 
+- (void )setTextFieldFont:(UIFont *)textFieldFont
+{
+	_textFieldFont = textFieldFont;
+	
+	[self.view.textFields enumerateObjectsUsingBlock:^(UITextField *textField, NSUInteger idx, BOOL *stop)
+	{
+		textField.font = textFieldFont;
+	}];
+}
+
 - (void)setDestructiveButtonTitleColor:(UIColor *)destructiveButtonTitleColor {
 	_destructiveButtonTitleColor = destructiveButtonTitleColor;
 	
