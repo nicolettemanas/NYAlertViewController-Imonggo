@@ -472,7 +472,7 @@
 		
 		// Pin the first text field to the top of the text field container view
 		if (i == 0) {
-			[self.textFieldContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[textField]"
+			[self.textFieldContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[textField(40)]"
 																															options:0
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(_contentViewContainerView, textField)]];
@@ -487,7 +487,7 @@
 		
 		// Pin the final text field to the bottom of the text field container view
 		if (i == ([textFields count] - 1)) {
-			[self.textFieldContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[textField]|"
+			[self.textFieldContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[textField(40)]|"
 																															options:0
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(textField)]];
