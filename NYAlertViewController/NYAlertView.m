@@ -280,9 +280,6 @@
 		[self.actionButtonContainerView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
 		[self.alertBackgroundView addSubview:self.actionButtonContainerView];
 		
-		self.backgroundColor = [UIColor greenColor];
-		self.alertBackgroundView.backgroundColor = [UIColor redColor];
-		self.contentViewContainerView.backgroundColor = [UIColor yellowColor];
 		self.actionButtonContainerView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
 		
 		[self addConstraint:[NSLayoutConstraint constraintWithItem:self.alertBackgroundView
