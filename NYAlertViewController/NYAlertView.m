@@ -458,6 +458,7 @@
 	for (int i = 0; i < [textFields count]; i++)
 	{
 		UITextField *textField = textFields[i];
+		textField.font = self.textFieldFont;
 		textField.borderStyle = UITextBorderStyleNone;
 		textField.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
 		

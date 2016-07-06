@@ -36,6 +36,8 @@ typedef NS_ENUM(NSInteger, NYAlertViewButtonType) {
 @property (nonatomic) UIFont *cancelButtonTitleFont;
 @property (nonatomic) UIFont *destructiveButtonTitleFont;
 
+@property (nonatomic) UIFont *textFieldFont;
+
 @property (nonatomic) UIColor *buttonColor;
 @property (nonatomic) UIColor *buttonTitleColor;
 @property (nonatomic) UIColor *cancelButtonColor;
