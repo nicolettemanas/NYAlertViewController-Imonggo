@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NYAlertViewController-Imonggo"
-  s.version          = "1.3.6"
+  s.version          = "1.3.7"
   s.summary          = "Highly Customizable iOS Alert Views"
   s.description      = "Replacement for UIAlertController/UIAlertView with support for content views and UI customization"
   s.homepage         = "https://github.com/nealyoung/NYAlertViewController"
