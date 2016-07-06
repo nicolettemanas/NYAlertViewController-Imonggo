@@ -280,6 +280,11 @@
 		[self.actionButtonContainerView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
 		[self.alertBackgroundView addSubview:self.actionButtonContainerView];
 		
+		self.backgroundColor = [UIColor greenColor];
+		self.alertBackgroundView.backgroundColor = [UIColor redColor];
+		self.contentViewContainerView.backgroundColor = [UIColor yellowColor];
+		self.actionButtonContainerView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+		
 		[self addConstraint:[NSLayoutConstraint constraintWithItem:self.alertBackgroundView
 																		 attribute:NSLayoutAttributeCenterX
 																		 relatedBy:NSLayoutRelationEqual
@@ -343,12 +348,12 @@
 																													metrics:nil
 																													  views:NSDictionaryOfVariableBindings(_textFieldContainerView)]];
 		
-		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[_actionButtonContainerView]-8-|"
+		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_actionButtonContainerView]-0-|"
 																													options:0
 																													metrics:nil
 																													  views:NSDictionaryOfVariableBindings(_actionButtonContainerView)]];
 		
-		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-16-[_titleLabel]-8-[_messageTextView][_contentViewContainerView][_textFieldContainerView][_actionButtonContainerView]-16-|"
+		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-16-[_titleLabel]-8-[_messageTextView][_contentViewContainerView]-1-[_textFieldContainerView]-16-[_actionButtonContainerView]-0-|"
 																													options:0
 																													metrics:nil
 																													  views:NSDictionaryOfVariableBindings(_titleLabel,
@@ -452,8 +457,13 @@
 	
 	_textFields = textFields;
 	
-	for (int i = 0; i < [textFields count]; i++) {
+	for (int i = 0; i < [textFields count]; i++)
+	{
 		UITextField *textField = textFields[i];
+		textField.borderStyle = UITextBorderStyleNone;
+		textField.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+		
+		
 		[textField setTranslatesAutoresizingMaskIntoConstraints:NO];
 		[self.textFieldContainerView addSubview:textField];
 		
@@ -510,12 +520,12 @@
 																										  multiplier:1.0f
 																											 constant:0.0f]];
 		
-		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[firstButton]-[lastButton]-|"
+		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[firstButton]-1-[lastButton]-0-|"
 																															options:NSLayoutFormatAlignAllCenterY
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(firstButton, lastButton)]];
 		
-		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[firstButton(32)]|"
+		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[firstButton(32)]-0-|"
 																															options:0
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(_contentViewContainerView, firstButton)]];
@@ -530,7 +540,7 @@
 			
 			[self.actionButtonContainerView addSubview:actionButton];
 			
-			[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[actionButton]-|"
+			[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[actionButton]-0-|"
 																																options:0
 																																metrics:nil
 																																  views:NSDictionaryOfVariableBindings(actionButton)]];
@@ -541,14 +551,14 @@
 																																  views:NSDictionaryOfVariableBindings(actionButton)]];
 			
 			if (i == 0) {
-				[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[actionButton]"
+				[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[actionButton]"
 																																	options:0
 																																	metrics:nil
 																																	  views:NSDictionaryOfVariableBindings(_contentViewContainerView, actionButton)]];
 			} else {
 				UIButton *previousButton = actionButtons[i - 1];
 				
-				[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previousButton]-[actionButton]"
+				[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previousButton]-1-[actionButton]"
 																																	options:0
 																																	metrics:nil
 																																	  views:NSDictionaryOfVariableBindings(previousButton, actionButton)]];
