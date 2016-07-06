@@ -323,32 +323,32 @@
 																		multiplier:0.9f
 																		  constant:0.0f]];
 		
-		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_titleLabel]-|"
+		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[_titleLabel]-8-|"
 																													options:0
 																													metrics:nil
 																													  views:NSDictionaryOfVariableBindings(_titleLabel)]];
 		
-		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_messageTextView]-|"
+		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[_messageTextView]-8-|"
 																													options:0
 																													metrics:nil
 																													  views:NSDictionaryOfVariableBindings(_messageTextView)]];
 		
-		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_contentViewContainerView]|"
+		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[_contentViewContainerView]-8-|"
 																													options:0
 																													metrics:nil
 																													  views:NSDictionaryOfVariableBindings(_contentViewContainerView)]];
 		
-		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_textFieldContainerView]|"
+		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[_textFieldContainerView]-8-|"
 																													options:0
 																													metrics:nil
 																													  views:NSDictionaryOfVariableBindings(_textFieldContainerView)]];
 		
-		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_actionButtonContainerView]|"
+		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[_actionButtonContainerView]-8-|"
 																													options:0
 																													metrics:nil
 																													  views:NSDictionaryOfVariableBindings(_actionButtonContainerView)]];
 		
-		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_titleLabel]-2-[_messageTextView][_contentViewContainerView][_textFieldContainerView][_actionButtonContainerView]-|"
+		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-16-[_titleLabel]-8-[_messageTextView][_contentViewContainerView][_textFieldContainerView][_actionButtonContainerView]-16-|"
 																													options:0
 																													metrics:nil
 																													  views:NSDictionaryOfVariableBindings(_titleLabel,
