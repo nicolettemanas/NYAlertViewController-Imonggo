@@ -116,6 +116,7 @@ typedef NS_ENUM(NSInteger, NYAlertViewControllerTransitionStyle) {
  */
 @property (nonatomic) UIFont *textFieldFont;
 
+
 /**
  The color used to display the alert view's title
  
