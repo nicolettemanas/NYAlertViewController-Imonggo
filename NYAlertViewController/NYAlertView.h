@@ -57,4 +57,6 @@ typedef NS_ENUM(NSInteger, NYAlertViewButtonType) {
 
 @property (nonatomic) NSArray *textFields;
 
+@property (nonatomic) bool forceButtonVertical;
+
 @end
