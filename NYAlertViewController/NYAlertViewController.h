@@ -198,6 +198,8 @@ typedef NS_ENUM(NSInteger, NYAlertViewControllerTransitionStyle) {
  */
 @property (nonatomic, readonly) NSArray *textFields;
 
+@property (nonatomic) bool forceVerticalButton;
+
 /**
  Add an alert action object to be displayed in the alert view
  
