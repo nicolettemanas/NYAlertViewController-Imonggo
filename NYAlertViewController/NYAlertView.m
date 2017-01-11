@@ -65,7 +65,6 @@
 
 @implementation NYAlertViewButton
 
-
 + (id)buttonWithType:(UIButtonType)buttonType {
 	return [super buttonWithType:UIButtonTypeCustom];
 }
@@ -319,15 +318,13 @@
 		
 		[self addConstraint:self.backgroundViewVerticalCenteringConstraint];
 		
-		/*
-		 [self addConstraint:[NSLayoutConstraint constraintWithItem:self.alertBackgroundView
-		 attribute:NSLayoutAttributeHeight
-		 relatedBy:NSLayoutRelationLessThanOrEqual
-		 toItem:self
-		 attribute:NSLayoutAttributeHeight
-		 multiplier:0.9f
-		 constant:0.0f]];
-		 */
+		[self addConstraint:[NSLayoutConstraint constraintWithItem:self.alertBackgroundView
+																		 attribute:NSLayoutAttributeHeight
+																		 relatedBy:NSLayoutRelationLessThanOrEqual
+																			 toItem:self
+																		 attribute:NSLayoutAttributeHeight
+																		multiplier:0.9f
+																		  constant:0.0f]];
 		
 		[self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[_titleLabel]-8-|"
 																													options:0
@@ -405,11 +402,6 @@
 	}
 }
 
-- (NSInteger)buttonHeight
-{
-	return 50;
-}
-
 //- (void)actionButtonPressed:(NYAlertViewButton *)button {
 //    NYAlertAction *action = self.actions[button.tag];
 //    action.handler(action);
@@ -481,8 +473,7 @@
 		
 		// Pin the first text field to the top of the text field container view
 		if (i == 0) {
-			NSString *format = [NSString stringWithFormat:@"V:|-[textField(%d)]", [self buttonHeight]];
-			[self.textFieldContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:format
+			[self.textFieldContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[textField(40)]"
 																															options:0
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(_contentViewContainerView, textField)]];
@@ -497,8 +488,7 @@
 		
 		// Pin the final text field to the bottom of the text field container view
 		if (i == ([textFields count] - 1)) {
-			NSString *format = [NSString stringWithFormat:@"V:[textField(%d)]|", [self buttonHeight]];
-			[self.textFieldContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:format
+			[self.textFieldContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[textField(40)]|"
 																															options:0
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(textField)]];
@@ -514,7 +504,7 @@
 	_actionButtons = actionButtons;
 	
 	// If there are 2 actions, display the buttons next to each other. Otherwise, stack the buttons vertically at full width
-	if ([actionButtons count] == 2) {
+	if (([actionButtons count] == 2) && !_forceButtonVertical) {
 		UIButton *firstButton = actionButtons[0];
 		UIButton *lastButton = actionButtons[1];
 		
@@ -534,14 +524,12 @@
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(firstButton, lastButton)]];
 		
-		NSString *vFormat = [NSString stringWithFormat:@"V:|-1-[firstButton(%d)]-0-|", [self buttonHeight]];
-		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:vFormat
+		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[firstButton(40)]-0-|"
 																															options:0
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(_contentViewContainerView, firstButton)]];
 		
-		NSString *hFormat = [NSString stringWithFormat:@"V:[lastButton(%d)]", [self buttonHeight]];
-		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:hFormat
+		[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[lastButton(40)]"
 																															options:0
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(lastButton)]];
@@ -556,8 +544,7 @@
 																																metrics:nil
 																																  views:NSDictionaryOfVariableBindings(actionButton)]];
 			
-			NSString *hFormat = [NSString stringWithFormat:@"V:[actionButton(%d)]", [self buttonHeight]];
-			[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:hFormat
+			[self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[actionButton(40)]"
 																																options:0
 																																metrics:nil
 																																  views:NSDictionaryOfVariableBindings(actionButton)]];
