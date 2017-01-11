@@ -753,6 +753,7 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
 }
 
 - (void)addAction:(UIAlertAction *)action {
+	self.view.forceButtonVertical = self.forceVerticalButton;
 	_actions = [self.actions arrayByAddingObject:action];
 }
 
