@@ -488,8 +488,8 @@
 																															  views:NSDictionaryOfVariableBindings(_contentViewContainerView, textField)]];
 		} else {
 			UITextField *previousTextField = textFields[i - 1];
-			
-			[self.textFieldContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[previousTextField]-[textField]"
+			NSString *format = [NSString stringWithFormat:@"V:[previousTextField]-[textField(%d)]", [self buttonHeight]];
+			[self.textFieldContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat: format
 																															options:0
 																															metrics:nil
 																															  views:NSDictionaryOfVariableBindings(previousTextField, textField)]];
