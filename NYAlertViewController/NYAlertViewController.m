@@ -758,8 +758,11 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
 }
 
 - (void)addTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler {
+  UIView *left = [[UIView alloc] initWithFrame: CGRectMake(0,0,10,10)];
 	UITextField *textField = [[UITextField alloc] initWithFrame:CGRectZero];
 	textField.borderStyle = UITextBorderStyleRoundedRect;
+  textField.leftViewMode = UITextFieldViewModeAlways;
+  textField.leftView = left;
 	
 	configurationHandler(textField);
 	
